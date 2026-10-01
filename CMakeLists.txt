@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
 project(NotePad-- VERSION 1.22.0)
  
+macro(aux_source_directory dir result)
+    file(GLOB _aux_sources "${dir}/*.cpp" "${dir}/*.c" "${dir}/*.cc" "${dir}/*.cxx")
+    set(${result} ${${result}} ${_aux_sources})
+endmacro()
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
