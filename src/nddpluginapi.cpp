@@ -13,7 +13,7 @@ void NddPluginApi::setMainNotePad(QWidget * pWidget)
 	m_mainNotePad = pWidget;
 }
 
-//注意这里实际返回的是ScintillaEditView
+//娉ㄦ剰杩欓噷瀹為檯杩斿洖鐨勬槸ScintillaEditView
 QsciScintilla* NddPluginApi::getCurrentEidtHandle()
 {
 	CCNotePad* pNotepad = dynamic_cast<CCNotePad*>(m_mainNotePad);

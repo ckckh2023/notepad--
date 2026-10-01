@@ -1,4 +1,4 @@
-﻿#include "common.h"
+#include "common.h"
 
 
 int nbDigitsFromNbLines(size_t nbLines)

@@ -1,4 +1,4 @@
-﻿#include "optionsview.h"
+#include "optionsview.h"
 #include "doctypelistview.h"
 #include "texteditsetwin.h"
 #include "ccnotepad.h"

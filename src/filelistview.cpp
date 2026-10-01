@@ -1,4 +1,4 @@
-﻿#include "filelistview.h"
+#include "filelistview.h"
 #include "rcglobal.h"
 #include "ccnotepad.h"
 #include <QListWidgetItem>

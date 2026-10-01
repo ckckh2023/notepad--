@@ -1,4 +1,4 @@
-﻿#include "filecmprulewin.h"
+#include "filecmprulewin.h"
 
 FileCmpRuleWin::FileCmpRuleWin(int mode, bool blankMath, int equalRato,QWidget *parent)
 	: QWidget(parent)

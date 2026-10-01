@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerHTML class.
+// This defines the interface to the QsciLexerHTML class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

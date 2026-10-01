@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerOctave class.
+// This defines the interface to the QsciLexerOctave class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

@@ -1,4 +1,4 @@
-﻿#include "scintillahexeditview.h"
+#include "scintillahexeditview.h"
 #include "styleset.h"
 
 #include "ccnotepad.h"

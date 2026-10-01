@@ -20,7 +20,7 @@ InstanceObj::~InstanceObj()
 
 void InstanceObj::doMainWork()
 {
-	//做一个简单的转大写的操作
+	//鍋氫竴涓畝鍗曠殑杞ぇ鍐欑殑鎿嶄綔
 	if (m_pMainToolWin.isNull())
 	{
 		m_pMainToolWin = new QtTestClass(m_pNotepad);

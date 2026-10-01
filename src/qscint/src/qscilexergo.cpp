@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerGO class.
+// This module implements the QsciLexerGO class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

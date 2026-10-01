@@ -1,4 +1,4 @@
-﻿#include "textfind.h"
+#include "textfind.h"
 
 TextFind::TextFind(int dire, QWidget *parent): QWidget(parent)
 {

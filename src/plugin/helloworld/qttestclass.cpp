@@ -1,4 +1,4 @@
-﻿#include "qttestclass.h"
+#include "qttestclass.h"
 #include <qsciscintilla.h>
 
 extern std::function<QsciScintilla* (QWidget*)> s_getCurEdit;

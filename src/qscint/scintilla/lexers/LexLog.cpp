@@ -34,9 +34,9 @@ using namespace Scintilla;
 
 //const char styleSubable[] = { SCE_P_IDENTIFIER, 0 };
 
-//Default = 0,//ÖĞÎÄ
-//Ascii = 1,//Ó¢ÎÄ
-//Keyword = 2, //¹Ø¼ü×Ö£¬Ö»ÓĞÒÔTXTÎªÄ¸°æµÄ
+//Default = 0,//ä¸­æ–‡
+//Ascii = 1,//è‹±æ–‡
+//Keyword = 2, //å…³é”®å­—ï¼Œåªæœ‰ä»¥TXTä¸ºæ¯ç‰ˆçš„
 
 static LexicalClass lexicalClasses[] = {
 	// Lexer Python SCLEX_PYTHON SCE_P_:
@@ -94,7 +94,7 @@ class LexLOG :public DefaultLexer
 public:
 	explicit LexLOG() :
 		DefaultLexer(lexicalClasses, ELEMENTS(lexicalClasses)),
-		setWord(CharacterSet::setAlphaNum, "._", 0x80, true),//×ÖÄ¸¡¢Êı×Ö¡¢ÏÂ»®Ïß¡¢. µ¥´ÊµÄ×Ö·û¼¯¡£
+		setWord(CharacterSet::setAlphaNum, "._", 0x80, true),//å­—æ¯ã€æ•°å­—ã€ä¸‹åˆ’çº¿ã€. å•è¯çš„å­—ç¬¦é›†ã€‚
 		setWordStart(CharacterSet::setAlpha, "_", 0x80, true),
 		hexWord(CharacterSet::setDigits, "abcdefABCDEF", 0x80, true)
 	{
@@ -189,7 +189,7 @@ inline bool IsAWordStart(int ch, bool unicodeIdentifiers) {
 	return IsXidStart(ch);
 }
 
-//ÊÇ·ñÊÇµ¥´Ê·Ö¸î·ûºÅ£¬¶ÔÓÚasciiÖĞµÄÊı×ÖºÍ×ÖÄ¸ÒÔÍâµÄ×Ö·û£¬±ÈÈç . @ \t µÈ£¬¶¼×÷ÎªÒ»¸öµ¥´ÊµÄ·Ö¸î·ûºÅ¡£
+//æ˜¯å¦æ˜¯å•è¯åˆ†å‰²ç¬¦å·ï¼Œå¯¹äºasciiä¸­çš„æ•°å­—å’Œå­—æ¯ä»¥å¤–çš„å­—ç¬¦ï¼Œæ¯”å¦‚ . @ \t ç­‰ï¼Œéƒ½ä½œä¸ºä¸€ä¸ªå•è¯çš„åˆ†å‰²ç¬¦å·ã€‚
 inline bool IsWordSplitChar(int ch) noexcept {
 	return (ch < 0x80) && !isalnum(ch);
 }
@@ -198,7 +198,7 @@ inline bool IsLineEol(int ch) noexcept {
 	return ch == '\n' || ch == '\r';
 }
 
-//»ñÈ¡ĞĞ£¬×î¶à»ñÈ¡128¸ö×Ö·û´®
+//è·å–è¡Œï¼Œæœ€å¤šè·å–128ä¸ªå­—ç¬¦ä¸²
 static std::string GetLineContents(LexAccessor& styler, Sci_Position start, const int len=128) {
 	std::string lineContent;
 	Sci_Position i = 0;
@@ -215,7 +215,7 @@ static std::string GetLineContents(LexAccessor& styler, Sci_Position start, cons
 
 
 
-//Ö»Ê¶±ğÖĞÎÄºÍÓ¢ÎÄÁ½ÖÖµ¥´ÊµÄ×´Ì¬
+//åªè¯†åˆ«ä¸­æ–‡å’Œè‹±æ–‡ä¸¤ç§å•è¯çš„çŠ¶æ€
 void SCI_METHOD LexLOG::Lex(Sci_PositionU startPos, Sci_Position length, int initStyle, IDocument *pAccess) {
 	Accessor styler(pAccess, NULL);
 
@@ -230,15 +230,15 @@ void SCI_METHOD LexLOG::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 	bool isDataMatch = false;
 
 	for (; sc.More();) {
-		//Èç¹ûÊÇÔÚĞĞ¿ªÍ·£¬Ôò»ñÈ¡64×Ö½Ú£¬Ê¶±ğ³öÆäÖĞµÄÈÕÆÚ¡£
+		//å¦‚æœæ˜¯åœ¨è¡Œå¼€å¤´ï¼Œåˆ™è·å–64å­—èŠ‚ï¼Œè¯†åˆ«å‡ºå…¶ä¸­çš„æ—¥æœŸã€‚
 		if (sc.atLineStart) {
 			std::string lineContens = GetLineContents(styler, sc.currentPos,64);
-			//Æ¥ÅäÀïÃæµÄÈÕÆÚÊ±¼äÖµ
+			//åŒ¹é…é‡Œé¢çš„æ—¥æœŸæ—¶é—´å€¼
 			std::smatch result;
 			std::string::const_iterator iterStart = lineContens.begin();
 			std::string::const_iterator iterEnd = lineContens.end();
 
-			//Æ¥Åäµ½ÈÕÆÚ
+			//åŒ¹é…åˆ°æ—¥æœŸ
 			if (std::regex_search(iterStart, iterEnd, result, patternData))
 			{
 				int start = result[0].first - iterStart;
@@ -270,7 +270,7 @@ void SCI_METHOD LexLOG::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 		{
 			if (!hexWord.Contains(sc.ch))
 			{
-				sc.ChangeState(SCE_LOG_NUM);//16½øÖÆºÍ10½øÖÆÒ»ÑùµÄ¸ñÊ½
+				sc.ChangeState(SCE_LOG_NUM);//16è¿›åˆ¶å’Œ10è¿›åˆ¶ä¸€æ ·çš„æ ¼å¼
 				sc.SetState(SCE_LOG_DEFAULT);
 			}
 		}
@@ -286,18 +286,18 @@ void SCI_METHOD LexLOG::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 
 			case SCE_LOG_DEFAULT:
 			{
-				//×¢ÒâË³Ğò£¬ÒªÏÈÅĞ¶ÏÊı×Ö¡£
+				//æ³¨æ„é¡ºåºï¼Œè¦å…ˆåˆ¤æ–­æ•°å­—ã€‚
 				if (sc.Match('0','x'))
 				{
 					sc.SetState(SCE_LOG_HEX);
 					sc.Forward();
 				}
 				else if (IsADigit(sc.ch) || (sc.ch == '.' && IsADigit(sc.chNext))) {
-					//Èç¹ûµ±Ç°×Ö·ûÊÇÊı×Ö£¬»òÕßÊÇ.Êı×Ö£¬ÔòÖ±½ÓÉèÖÃµ±Ç°×´Ì¬ÎªÊı×Ö¡£
+					//å¦‚æœå½“å‰å­—ç¬¦æ˜¯æ•°å­—ï¼Œæˆ–è€…æ˜¯.æ•°å­—ï¼Œåˆ™ç›´æ¥è®¾ç½®å½“å‰çŠ¶æ€ä¸ºæ•°å­—ã€‚
 					sc.SetState(SCE_LOG_NUM);
 				}
 				else if (!sc.atLineEnd && setWordStart.Contains(sc.ch)) {
-					//Èç¹û²»ÔÚĞĞÎ²£¬¶øÇÒµ±Ç°×Ö·ûÊÇÒ»¸öµ¥´ÊµÄ¿ªÍ·±êÊ¶×Ö·û£¬Ôò½øÈë±êÊ¶·ûÊ¶±ğ×´Ì¬¡£
+					//å¦‚æœä¸åœ¨è¡Œå°¾ï¼Œè€Œä¸”å½“å‰å­—ç¬¦æ˜¯ä¸€ä¸ªå•è¯çš„å¼€å¤´æ ‡è¯†å­—ç¬¦ï¼Œåˆ™è¿›å…¥æ ‡è¯†ç¬¦è¯†åˆ«çŠ¶æ€ã€‚
 					sc.SetState(SCE_LOG_IDENTIFIER);
 				}
 			}
@@ -307,7 +307,7 @@ void SCI_METHOD LexLOG::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 				if (sc.atLineStart || sc.atLineEnd || !setWord.Contains(sc.ch))
 				{
 					char s[1000];
-					//È¡³öµ±Ç°±êÊ¶·û£¬×¢Òâ±êÊ¶·û²»»á³¬¹ı1000£¬ÕâÊÇÔ¤¼Æ£¬²»»áÓĞÈËÉµµ½È¡ÃûÒ»¸ö³¬¹ı1000µÄ×Ö·û´®±äÁ¿¡£
+					//å–å‡ºå½“å‰æ ‡è¯†ç¬¦ï¼Œæ³¨æ„æ ‡è¯†ç¬¦ä¸ä¼šè¶…è¿‡1000ï¼Œè¿™æ˜¯é¢„è®¡ï¼Œä¸ä¼šæœ‰äººå‚»åˆ°å–åä¸€ä¸ªè¶…è¿‡1000çš„å­—ç¬¦ä¸²å˜é‡ã€‚
 					sc.GetCurrentLowered(s, sizeof(s));
 
 					if (keywords.InList(s)) {
@@ -350,7 +350,7 @@ static bool IsQuoteLine(Sci_Position line, const Accessor &styler) {
 }
 
 
-//²»´¦ÀíÈÎºÎÕÛµş
+//ä¸å¤„ç†ä»»ä½•æŠ˜å 
 void SCI_METHOD LexLOG::Fold(Sci_PositionU startPos, Sci_Position length, int /*initStyle - unused*/, IDocument *pAccess) {
 	return;
 }

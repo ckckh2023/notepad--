@@ -1,4 +1,4 @@
-﻿#include "shortcutkeyeditwin.h"
+#include "shortcutkeyeditwin.h"
 
 #include <QMessageBox> 
 

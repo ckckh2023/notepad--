@@ -35,9 +35,9 @@ using namespace Scintilla;
 
 //const char styleSubable[] = { SCE_P_IDENTIFIER, 0 };
 
-//Default = 0,//ÖĞÎÄ
-//Ascii = 1,//Ó¢ÎÄ
-//Keyword = 2, //¹Ø¼ü×Ö£¬Ö»ÓĞÒÔTXTÎªÄ¸°æµÄ
+//Default = 0,//ä¸­æ–‡
+//Ascii = 1,//è‹±æ–‡
+//Keyword = 2, //å…³é”®å­—ï¼Œåªæœ‰ä»¥TXTä¸ºæ¯ç‰ˆçš„
 
 static LexicalClass lexicalClasses[] = {
 	// Lexer Python SCLEX_PYTHON SCE_P_:
@@ -52,15 +52,15 @@ static LexicalClass lexicalClasses[] = {
 
 enum LOG_STATUS { 
 	SCE_GCODE_DEFAULT=0,
-	SCE_GCODE_KEYWORD, //¹Ø¼ü×Ö
-	SCE_GCODE_KEYWORD1, //¹Ø¼ü×Ö
-	SCE_GCODE_COMMNET, //Êı×Ö
-	SCE_GCODE_POSITION_X, //Î»ÖÃ X Y Z 
-	SCE_GCODE_POSITION_Y, //Î»ÖÃ X Y Z 
-	SCE_GCODE_POSITION_Z, //Î»ÖÃ X Y Z 
-	SCE_GCODE_OFFSET,//I J K Æ«ÒÆ
-	SCE_GCODE_VELOCITY,//ËÙ¶È F
-	SCE_GCODE_TIMES,// P ´ÎÊı
+	SCE_GCODE_KEYWORD, //å…³é”®å­—
+	SCE_GCODE_KEYWORD1, //å…³é”®å­—
+	SCE_GCODE_COMMNET, //æ•°å­—
+	SCE_GCODE_POSITION_X, //ä½ç½® X Y Z 
+	SCE_GCODE_POSITION_Y, //ä½ç½® X Y Z 
+	SCE_GCODE_POSITION_Z, //ä½ç½® X Y Z 
+	SCE_GCODE_OFFSET,//I J K åç§»
+	SCE_GCODE_VELOCITY,//é€Ÿåº¦ F
+	SCE_GCODE_TIMES,// P æ¬¡æ•°
 	SCE_GCODE_IDENTIFIER,
 	SCE_GCODE_IDENTIFIER_KEYWORD,
 	SCE_GCODE_IDENTIFIER_KEYWORD1,
@@ -87,7 +87,7 @@ struct OptionsTxt {
 
 };
 
-//»ñÈ¡ĞĞ£¬×î¶à»ñÈ¡1024¸ö×Ö·û´®
+//è·å–è¡Œï¼Œæœ€å¤šè·å–1024ä¸ªå­—ç¬¦ä¸²
 static std::string GetLineContents(LexAccessor& styler, Sci_Position start, const int len = 1024) {
 	std::string lineContent;
 	Sci_Position i = 0;
@@ -123,7 +123,7 @@ class LexGCode :public DefaultLexer
 public:
 	explicit LexGCode() :
 		DefaultLexer(lexicalClasses, ELEMENTS(lexicalClasses)),
-		setWord(CharacterSet::setDigits, "GMXYZPIJKF-", 0x80, true),//×ÖÄ¸¡¢Êı×Ö¡¢ÏÂ»®Ïß¡¢. µ¥´ÊµÄ×Ö·û¼¯¡£
+		setWord(CharacterSet::setDigits, "GMXYZPIJKF-", 0x80, true),//å­—æ¯ã€æ•°å­—ã€ä¸‹åˆ’çº¿ã€. å•è¯çš„å­—ç¬¦é›†ã€‚
 		setWordStart(CharacterSet::setNone, "GMXYZPIJKF", 0x80, true)
 	{
 		
@@ -220,7 +220,7 @@ inline bool IsAWordStart(int ch, bool unicodeIdentifiers) {
 	return IsXidStart(ch);
 }
 
-//ÊÇ·ñÊÇµ¥´Ê·Ö¸î·ûºÅ£¬¶ÔÓÚasciiÖĞµÄÊı×ÖºÍ×ÖÄ¸ÒÔÍâµÄ×Ö·û£¬±ÈÈç . @ \t µÈ£¬¶¼×÷ÎªÒ»¸öµ¥´ÊµÄ·Ö¸î·ûºÅ¡£
+//æ˜¯å¦æ˜¯å•è¯åˆ†å‰²ç¬¦å·ï¼Œå¯¹äºasciiä¸­çš„æ•°å­—å’Œå­—æ¯ä»¥å¤–çš„å­—ç¬¦ï¼Œæ¯”å¦‚ . @ \t ç­‰ï¼Œéƒ½ä½œä¸ºä¸€ä¸ªå•è¯çš„åˆ†å‰²ç¬¦å·ã€‚
 inline bool IsWordSplitChar(int ch) noexcept {
 	return (ch < 0x80) && !isalnum(ch);
 }
@@ -233,7 +233,7 @@ inline bool IsLineEol(int ch) noexcept {
 
 
 
-//Ö»Ê¶±ğÖĞÎÄºÍÓ¢ÎÄÁ½ÖÖµ¥´ÊµÄ×´Ì¬
+//åªè¯†åˆ«ä¸­æ–‡å’Œè‹±æ–‡ä¸¤ç§å•è¯çš„çŠ¶æ€
 void SCI_METHOD LexGCode::Lex(Sci_PositionU startPos, Sci_Position length, int initStyle, IDocument *pAccess) {
 	Accessor styler(pAccess, NULL);
 
@@ -256,7 +256,7 @@ void SCI_METHOD LexGCode::Lex(Sci_PositionU startPos, Sci_Position length, int i
 					sc.SetState(SCE_GCODE_IDENTIFIER_COMMENT);
 				}
 				else if (!sc.atLineEnd && setWordStart.Contains(sc.ch)) {
-					//Èç¹û²»ÔÚĞĞÎ²£¬¶øÇÒµ±Ç°×Ö·ûÊÇÒ»¸öµ¥´ÊµÄ¿ªÍ·±êÊ¶×Ö·û£¬Ôò½øÈë±êÊ¶·ûÊ¶±ğ×´Ì¬¡£
+					//å¦‚æœä¸åœ¨è¡Œå°¾ï¼Œè€Œä¸”å½“å‰å­—ç¬¦æ˜¯ä¸€ä¸ªå•è¯çš„å¼€å¤´æ ‡è¯†å­—ç¬¦ï¼Œåˆ™è¿›å…¥æ ‡è¯†ç¬¦è¯†åˆ«çŠ¶æ€ã€‚
 					if (sc.Match('G') && IsADigit(sc.chNext))
 					{
 						sc.SetState(SCE_GCODE_IDENTIFIER_KEYWORD);
@@ -316,7 +316,7 @@ void SCI_METHOD LexGCode::Lex(Sci_PositionU startPos, Sci_Position length, int i
 				if (sc.atLineStart || sc.atLineEnd || !setWord.Contains(sc.ch))
 				{
 					char s[1000];
-					//È¡³öµ±Ç°±êÊ¶·û£¬×¢Òâ±êÊ¶·û²»»á³¬¹ı512£¬ÕâÊÇÔ¤¼Æ£¬²»»áÓĞÈËÉµµ½È¡ÃûÒ»¸ö³¬¹ı1000µÄ×Ö·û´®±äÁ¿¡£
+					//å–å‡ºå½“å‰æ ‡è¯†ç¬¦ï¼Œæ³¨æ„æ ‡è¯†ç¬¦ä¸ä¼šè¶…è¿‡512ï¼Œè¿™æ˜¯é¢„è®¡ï¼Œä¸ä¼šæœ‰äººå‚»åˆ°å–åä¸€ä¸ªè¶…è¿‡1000çš„å­—ç¬¦ä¸²å˜é‡ã€‚
 					sc.GetCurrent(s, sizeof(s));
 
 					if (keywords.InList(s)) {
@@ -417,7 +417,7 @@ static bool IsQuoteLine(Sci_Position line, const Accessor &styler) {
 }
 
 
-//²»´¦ÀíÈÎºÎÕÛµş
+//ä¸å¤„ç†ä»»ä½•æŠ˜å 
 void SCI_METHOD LexGCode::Fold(Sci_PositionU startPos, Sci_Position length, int /*initStyle - unused*/, IDocument *pAccess) {
 	return;
 }

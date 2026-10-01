@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file LexVHDL.cxx
  ** Lexer for VHDL
  ** Written by Phil Reid,

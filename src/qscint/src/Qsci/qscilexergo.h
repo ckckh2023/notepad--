@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerGO class.
+// This defines the interface to the QsciLexerGO class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

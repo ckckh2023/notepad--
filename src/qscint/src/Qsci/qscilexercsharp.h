@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerCSharp class.
+// This defines the interface to the QsciLexerCSharp class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file RESearch.h
  ** Interface to the regular expression search library.
  **/

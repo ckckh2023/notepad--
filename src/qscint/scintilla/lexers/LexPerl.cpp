@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file LexPerl.cxx
  ** Lexer for Perl.
  ** Converted to lexer object by "Udo Lechner" <dlchnr(at)gmx(dot)net>

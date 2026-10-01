@@ -1,4 +1,4 @@
-﻿#include "Encode.h"
+#include "Encode.h"
 #include <QTextCodec>
 #include <QtDebug>
 

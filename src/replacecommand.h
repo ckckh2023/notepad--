@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "command.h"
 #include "rcglobal.h"
 

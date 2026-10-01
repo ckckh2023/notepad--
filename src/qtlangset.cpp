@@ -1,4 +1,4 @@
-﻿#include "qtlangset.h"
+#include "qtlangset.h"
 #include "scintillaeditview.h"
 #include "nddsetting.h"
 #include "rcglobal.h"

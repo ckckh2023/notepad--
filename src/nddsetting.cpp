@@ -1,4 +1,4 @@
-﻿#include "nddsetting.h"
+#include "nddsetting.h"
 #include <QObject>
 #include <QtDebug>
 #include <QCoreApplication>

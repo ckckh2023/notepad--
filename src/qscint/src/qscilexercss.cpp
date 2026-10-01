@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerCSS class.
+// This module implements the QsciLexerCSS class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

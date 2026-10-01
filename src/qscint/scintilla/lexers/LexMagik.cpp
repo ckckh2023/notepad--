@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /**
  * @file LexMagik.cxx
  * Lexer for GE(r) Smallworld(tm) MagikSF

@@ -1,4 +1,4 @@
-﻿#include "texteditsetwin.h"
+#include "texteditsetwin.h"
 #include "scintillaeditview.h"
 #include "ccnotepad.h"
 #include "qtlangset.h"

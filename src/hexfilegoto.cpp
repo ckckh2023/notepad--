@@ -1,4 +1,4 @@
-﻿#include "hexfilegoto.h"
+#include "hexfilegoto.h"
 
 HexFileGoto::HexFileGoto(QWidget *parent)
 	: QWidget(parent)

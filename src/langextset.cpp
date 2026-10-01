@@ -1,4 +1,4 @@
-﻿#include "langextset.h"
+#include "langextset.h"
 #include "scintillaeditview.h"
 #include "extlexermanager.h"
 #include "ccnotepad.h"

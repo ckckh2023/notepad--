@@ -1,4 +1,4 @@
-﻿#include "langstyledefine.h"
+#include "langstyledefine.h"
 #include "userlexdef.h"
 #include "extlexermanager.h"
 

@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerCPP class.
+// This module implements the QsciLexerCPP class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

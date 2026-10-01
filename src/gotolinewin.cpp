@@ -1,4 +1,4 @@
-﻿#include "gotolinewin.h"
+#include "gotolinewin.h"
 
 GoToLineWin::GoToLineWin(QWidget *parent)
 	: QWidget(parent)

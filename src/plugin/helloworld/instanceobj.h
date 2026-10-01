@@ -9,7 +9,7 @@ class QMenu;
 class InstanceObj :public QObject
 {
 public:
-	//ÍâÃæNddÊÍ·ÅÊ±£¬»á×Ô¶¯ÊÍ·Å¸Ã¶ÔÏó¡£
+	//å¤–é¢Nddé‡Šæ”¾æ—¶ï¼Œä¼šè‡ªåŠ¨é‡Šæ”¾è¯¥å¯¹è±¡ã€‚
 	InstanceObj(QWidget* pNotepad);
 	~InstanceObj();
 

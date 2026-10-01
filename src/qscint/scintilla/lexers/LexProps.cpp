@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file LexProps.cxx
  ** Lexer for properties files.
  **/

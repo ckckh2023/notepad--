@@ -1,4 +1,4 @@
-﻿#include "dirfindfile.h"
+#include "dirfindfile.h"
 
 DirFindFile::DirFindFile(int dire, QWidget *parent): QWidget(parent)
 {

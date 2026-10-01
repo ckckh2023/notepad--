@@ -12,12 +12,12 @@ const int STYLE_COLOUR_TITLE = 1;
 const int STYLE_COLOUR_DEST_FILE = 2;
 const int STYLE_COLOUR_KEYWORD_HIGH = 3;
 const int STYLE_COLOUR_KEYWORD_BACK_HIGH = 4;
-const int STYLE_DEEP_COLOUR_KEYWORD_HIGH = 5; //ÉîÉ«Ä£Ê½ÏÂÃæµÄÇ°¾°É«
+const int STYLE_DEEP_COLOUR_KEYWORD_HIGH = 5; //æ·±è‰²æ¨¡å¼ä¸‹é¢çš„å‰æ™¯è‰²
 const int STYLE_DEEP_COLOUR_DEST_FILE = 6;
 
 static void getFoldColor(QColor& fgColor, QColor& bgColor, QColor& activeFgColor)
 {
-	//ÕâÀï¿´ÆğÀ´·´ÁË£¬µ«ÊÇÊµ¼Ê´úÂë¾ÍÊÇÈç´Ë
+	//è¿™é‡Œçœ‹èµ·æ¥åäº†ï¼Œä½†æ˜¯å®é™…ä»£ç å°±æ˜¯å¦‚æ­¤
 	fgColor = StyleSet::s_global_style->fold.bgColor;
 	bgColor = StyleSet::s_global_style->fold.fgColor;
 
@@ -35,7 +35,7 @@ void FindResultView::setFoldColor(int margin, QColor fgClack, QColor bkColor, QC
 FindResultView::FindResultView(QWidget *parent)
 	: QsciScintilla(parent)
 {
-	//Í¨¹ıfold·¢ÏÖ£¬¾¡Á¿Ê¹ÓÃqscintµÄ¹¦ÄÜ£¬ÒòÎªËû×öÁË´óÁ¿·â×°ºÍ¼ò»¯
+	//é€šè¿‡foldå‘ç°ï¼Œå°½é‡ä½¿ç”¨qscintçš„åŠŸèƒ½ï¼Œå› ä¸ºä»–åšäº†å¤§é‡å°è£…å’Œç®€åŒ–
 	setFolding(BoxedTreeFoldStyle, MARGE_FOLDER);
 
 	SendScintilla(SCI_SETMARGINWIDTHN, MARGE_FOLDER, 14);
@@ -89,16 +89,16 @@ FindResultView::FindResultView(QWidget *parent)
 		SendScintilla(SCI_STYLESETBACK, STYLE_DEEP_COLOUR_DEST_FILE, bklParam);
 		SendScintilla(SCI_STYLESETFORE, STYLE_DEEP_COLOUR_DEST_FILE, 0x99cc99);
 		//SendScintilla(SCI_STYLESETFORE, STYLE_DEEP_COLOUR_DEST_FILE, fgLParam);
-		//SendScintilla(SCI_STYLESETBOLD, STYLE_DEEP_COLOUR_DEST_FILE, 1);//Õâ¸öÎŞ·¨ÉúĞ§¡£¿ÉÄÜÊÇqscint bug
+		//SendScintilla(SCI_STYLESETBOLD, STYLE_DEEP_COLOUR_DEST_FILE, 1);//è¿™ä¸ªæ— æ³•ç”Ÿæ•ˆã€‚å¯èƒ½æ˜¯qscint bug
 
-		//ÎÄ×ÖÒª´óÒ»ºÅ£¬È»ºóÑÕÉ«ÊÇÂÌÉ«
+		//æ–‡å­—è¦å¤§ä¸€å·ï¼Œç„¶åé¢œè‰²æ˜¯ç»¿è‰²
 		SendScintilla(SCI_STYLESETSIZE, STYLE_DEEP_COLOUR_DEST_FILE, 14);
 
 		SendScintilla(SCI_STYLESETFORE, STYLE_DEEP_COLOUR_KEYWORD_HIGH, 0x00aaff);
 		SendScintilla(SCI_STYLESETBACK, STYLE_DEEP_COLOUR_KEYWORD_HIGH, bklParam);
 
 
-		//¸øĞĞºÅÊ¹ÓÃ
+		//ç»™è¡Œå·ä½¿ç”¨
 		SendScintilla(SCI_STYLESETFORE, STYLE_COLOUR_KEYWORD_HIGH, 0x4080ff);
 		SendScintilla(SCI_STYLESETBACK, STYLE_COLOUR_KEYWORD_HIGH, bklParam);
 	}
@@ -112,7 +112,7 @@ FindResultView::FindResultView(QWidget *parent)
 FindResultView::~FindResultView()
 {}
 
-//ÉèÖÃĞĞ±³¾°É«
+//è®¾ç½®è¡ŒèƒŒæ™¯è‰²
 void FindResultView::setLineBackColorStyle(int line, int style)
 {
 	int startPos = SendScintilla(SCI_POSITIONFROMLINE, line);
@@ -122,7 +122,7 @@ void FindResultView::setLineBackColorStyle(int line, int style)
 	SendScintilla(SCI_SETSTYLING, len, style);
 }
 
-//ÉèÖÃĞĞÇ°¾°É«¡£line ĞĞºÅ£¬´ÓÏà¶ÔĞĞposµÄÎ»ÖÃ¿ªÊ¼
+//è®¾ç½®è¡Œå‰æ™¯è‰²ã€‚line è¡Œå·ï¼Œä»ç›¸å¯¹è¡Œposçš„ä½ç½®å¼€å§‹
 void FindResultView::setLineColorStyle(int line, int offsetPos, int length, int style)
 {
 	int startPos = SendScintilla(SCI_POSITIONFROMLINE, line);
@@ -147,7 +147,7 @@ void FindResultView::contextUserDefineMenuEvent(QMenu* menu)
 {
 	if (menu != nullptr)
 	{
-		//ÒÆ¶¯Ò»ÏÂÎ»ÖÃ
+		//ç§»åŠ¨ä¸€ä¸‹ä½ç½®
 
 		QAction* pCopy =  menu->findChild<QAction*>("copy");
 		if (pCopy != nullptr)
@@ -174,7 +174,7 @@ void FindResultView::contextUserDefineMenuEvent(QMenu* menu)
 
 
 	}
-	menu->move(cursor().pos()); //ÈÃ²Ëµ¥ÏÔÊ¾µÄÎ»ÖÃÔÚÊó±êµÄ×ø±êÉÏ
+	menu->move(cursor().pos()); //è®©èœå•æ˜¾ç¤ºçš„ä½ç½®åœ¨é¼ æ ‡çš„åæ ‡ä¸Š
 	menu->show();
 }
 
@@ -184,7 +184,7 @@ void FindResultView::on_foldAll()
 	{
 		const ResultLineInfo& lineInfo = m_resultWin->m_resultLineInfo.at(i);
 
-		//Èç¹ûÊÇ1¼¶±ğµÄĞĞ£¬Ôò½øĞĞÒ»¸öÊÕÆğ²Ù×÷
+		//å¦‚æœæ˜¯1çº§åˆ«çš„è¡Œï¼Œåˆ™è¿›è¡Œä¸€ä¸ªæ”¶èµ·æ“ä½œ
 		if ((lineInfo.level == 1) || (lineInfo.level == 0))
 		{
 			SendScintilla(SCI_FOLDLINE, i, (long)SC_FOLDACTION_CONTRACT);
@@ -198,7 +198,7 @@ void FindResultView::on_expandAll()
 	{
 		const ResultLineInfo& lineInfo = m_resultWin->m_resultLineInfo.at(i);
 
-		//Èç¹ûÊÇ1¼¶±ğµÄĞĞ£¬Ôò½øĞĞÒ»¸öÊÕÆğ²Ù×÷
+		//å¦‚æœæ˜¯1çº§åˆ«çš„è¡Œï¼Œåˆ™è¿›è¡Œä¸€ä¸ªæ”¶èµ·æ“ä½œ
 		if ((lineInfo.level == 1) || (lineInfo.level == 0))
 		{
 			SendScintilla(SCI_FOLDLINE, i, SC_FOLDACTION_EXPAND);
@@ -206,7 +206,7 @@ void FindResultView::on_expandAll()
 	}
 }
 
-//¸´ÖÆÑ¡ÖĞµÄÄÚÈİ
+//å¤åˆ¶é€‰ä¸­çš„å†…å®¹
 //void FindResultView::on_copySelect()
 //{
 //	QString word = selectedText();
@@ -219,7 +219,7 @@ void FindResultView::on_expandAll()
 //	}
 //}
 
-//¸´ÖÆÑ¡ÖĞĞĞ
+//å¤åˆ¶é€‰ä¸­è¡Œ
 void FindResultView::on_copySelectLine()
 {
 	int startPos = SendScintilla(SCI_GETSELECTIONSTART);

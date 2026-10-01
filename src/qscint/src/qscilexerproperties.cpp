@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerProperties class.
+// This module implements the QsciLexerProperties class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

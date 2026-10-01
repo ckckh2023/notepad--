@@ -1,4 +1,4 @@
-﻿#include "QTreeWidgetSortItem.h"
+#include "QTreeWidgetSortItem.h"
 #include "rcglobal.h"
 
 /* 自己重新实现一个QTreeWidgetSortItem，主要是为了重载函数的排序功能，不适应默认的名字排序，而是使用

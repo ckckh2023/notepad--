@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerJava class.
+// This defines the interface to the QsciLexerJava class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

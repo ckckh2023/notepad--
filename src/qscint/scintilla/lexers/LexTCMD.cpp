@@ -1,4 +1,4 @@
-﻿// Scintilla\ source code edit control
+// Scintilla\ source code edit control
 /** @file LexTCMD.cxx
  ** Lexer for Take Command / TCC batch scripts (.bat, .btm, .cmd).
  **/

@@ -1,4 +1,4 @@
-﻿#include "qscidisplaywindow.h"
+#include "qscidisplaywindow.h"
 #include "MediatorDisplay.h"
 #include "textfind.h"
 #include "common.h"

@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerVHDL class.
+// This module implements the QsciLexerVHDL class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

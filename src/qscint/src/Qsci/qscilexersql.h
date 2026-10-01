@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerSQL class.
+// This defines the interface to the QsciLexerSQL class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

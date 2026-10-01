@@ -1,1 +1,1 @@
-﻿#include "command.h"
+#include "command.h"

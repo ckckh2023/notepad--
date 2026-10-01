@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerAVS class.
+// This defines the interface to the QsciLexerAVS class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

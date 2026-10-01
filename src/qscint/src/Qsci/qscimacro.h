@@ -31,10 +31,10 @@
 class QsciScintilla;
 
 enum USER_DEFINE_MACRO {
-    MACRO_FIND_NEXT = 5000,//²éÕÒÏÂÒ»¸ö
-    MACRO_REPLACE_ALL,//È«²¿Ìæ»»
-    MACRO_REPLACE_ONE,//Ìæ»»Ò»Ìõ
-    MACRO_EXE_MENU_FUN,//Ö´ĞĞ²Ëµ¥À¸ÉÏÃæµÄÃüÁî
+    MACRO_FIND_NEXT = 5000,//æŸ¥æ‰¾ä¸‹ä¸€ä¸ª
+    MACRO_REPLACE_ALL,//å…¨éƒ¨æ›¿æ¢
+    MACRO_REPLACE_ONE,//æ›¿æ¢ä¸€æ¡
+    MACRO_EXE_MENU_FUN,//æ‰§è¡Œèœå•æ ä¸Šé¢çš„å‘½ä»¤
 };
 
 //! \brief The QsciMacro class represents a sequence of recordable editor
@@ -75,7 +75,7 @@ public:
     QString save() const;
 
 //signals:
-//    //´ÓÍâ²¿µ÷ÓÃ¼ÇÂ¼ºê£¬·ÇqscintillaÄÚ²¿ºê
+//    //ä»å¤–éƒ¨è°ƒç”¨è®°å½•å®ï¼Œéqscintillaå†…éƒ¨å®
 //    void s_record(unsigned int msg, unsigned long wParam, void* lParam);
 
 public slots:

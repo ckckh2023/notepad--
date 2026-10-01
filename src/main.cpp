@@ -1,4 +1,4 @@
-﻿#include "ccnotepad.h"
+#include "ccnotepad.h"
 #include "nddsetting.h"
 #include "styleset.h"
 

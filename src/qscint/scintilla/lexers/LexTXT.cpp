@@ -33,9 +33,9 @@ using namespace Scintilla;
 
 //const char styleSubable[] = { SCE_P_IDENTIFIER, 0 };
 
-//Default = 0,//ÖĞÎÄ
-//Ascii = 1,//Ó¢ÎÄ
-//Keyword = 2, //¹Ø¼ü×Ö£¬Ö»ÓĞÒÔTXTÎªÄ¸°æµÄ
+//Default = 0,//ä¸­æ–‡
+//Ascii = 1,//è‹±æ–‡
+//Keyword = 2, //å…³é”®å­—ï¼Œåªæœ‰ä»¥TXTä¸ºæ¯ç‰ˆçš„
 
 LexicalClass lexicalClasses[] = {
 	// Lexer Python SCLEX_PYTHON SCE_P_:
@@ -209,7 +209,7 @@ inline bool IsAWordStart(int ch, bool unicodeIdentifiers) {
 	return IsXidStart(ch);
 }
 
-//ÊÇ·ñÊÇµ¥´Ê·Ö¸î·ûºÅ£¬¶ÔÓÚasciiÖĞµÄÊı×ÖºÍ×ÖÄ¸ÒÔÍâµÄ×Ö·û£¬±ÈÈç . @ \t µÈ£¬¶¼×÷ÎªÒ»¸öµ¥´ÊµÄ·Ö¸î·ûºÅ¡£
+//æ˜¯å¦æ˜¯å•è¯åˆ†å‰²ç¬¦å·ï¼Œå¯¹äºasciiä¸­çš„æ•°å­—å’Œå­—æ¯ä»¥å¤–çš„å­—ç¬¦ï¼Œæ¯”å¦‚ . @ \t ç­‰ï¼Œéƒ½ä½œä¸ºä¸€ä¸ªå•è¯çš„åˆ†å‰²ç¬¦å·ã€‚
 inline bool IsWordSplitChar(int ch) noexcept {
 	//return ch == ' ' || ch == '\t';
 	return (ch < 0x80) && !isalnum(ch);
@@ -219,7 +219,7 @@ inline bool IsLineEol(int ch) noexcept {
 	return ch == '\n' || ch == '\r';
 }
 
-//Ö»Ê¶±ğÖĞÎÄºÍÓ¢ÎÄÁ½ÖÖµ¥´ÊµÄ×´Ì¬
+//åªè¯†åˆ«ä¸­æ–‡å’Œè‹±æ–‡ä¸¤ç§å•è¯çš„çŠ¶æ€
 void SCI_METHOD LexTXT::Lex(Sci_PositionU startPos, Sci_Position length, int initStyle, IDocument *pAccess) {
 	Accessor styler(pAccess, NULL);
 
@@ -260,10 +260,10 @@ void SCI_METHOD LexTXT::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 			{
 				if (IsAAsciiChar(sc.ch))
 				{
-					//Èç¹ûÒªÊ¶±ğ¹Ø¼ü×Ö£¬±ØĞëÒªÌø¹ıµ±Ç°¿Õ°××Ö·û¡£·ñÔò ÖĞÎÄ¿Õ¸ñºóÃæµÚÒ»¸ö¹Ø¼ü×ÖÎŞ·¨¸ßÁÁ
+					//å¦‚æœè¦è¯†åˆ«å…³é”®å­—ï¼Œå¿…é¡»è¦è·³è¿‡å½“å‰ç©ºç™½å­—ç¬¦ã€‚å¦åˆ™ ä¸­æ–‡ç©ºæ ¼åé¢ç¬¬ä¸€ä¸ªå…³é”®å­—æ— æ³•é«˜äº®
 					if (IsWordSplitChar(sc.ch) && IsAWordStart(sc.chNext, false))
 					{
-						//ÕâÀïÇĞ»»µÄÊ±ºò£¬ForwardSetStateÌø¹ıµ±Ç°¿Õ°××Ö·û
+						//è¿™é‡Œåˆ‡æ¢çš„æ—¶å€™ï¼ŒForwardSetStateè·³è¿‡å½“å‰ç©ºç™½å­—ç¬¦
 						sc.ForwardSetState(SCE_TXT_ASCII);
 						continue;
 					}
@@ -276,10 +276,10 @@ void SCI_METHOD LexTXT::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 				{
 					sc.SetState(SCE_TXT_DEFAULT);
 				}
-				else //´æÔÚ×Ô¶¨Òå¹Ø¼ü×Ö£¬ËµÃ÷ÊÇÓÃ»§×Ô¶¨ÒåÓï·¨¡£
+				else //å­˜åœ¨è‡ªå®šä¹‰å…³é”®å­—ï¼Œè¯´æ˜æ˜¯ç”¨æˆ·è‡ªå®šä¹‰è¯­æ³•ã€‚
 				{
-					//ÏÂÃæÊÇÊ¶±ğ¹Ø¼ü×ÖµÄÂß¼­¡£ÔÚÓ¢ÎÄÂß¼­ÏÂ£¬¶Ôµ¥´Ê½øĞĞÊ¶±ğ¡£
-					//ËùÎ½µ¥´Ê£¬Ò»¶¨ÊÇ°üÎ§ÔÚÇ°ºó¿Õ¸ñ»ò\tÖĞµÄÓ¢ÎÄµ¥´Ê
+					//ä¸‹é¢æ˜¯è¯†åˆ«å…³é”®å­—çš„é€»è¾‘ã€‚åœ¨è‹±æ–‡é€»è¾‘ä¸‹ï¼Œå¯¹å•è¯è¿›è¡Œè¯†åˆ«ã€‚
+					//æ‰€è°“å•è¯ï¼Œä¸€å®šæ˜¯åŒ…å›´åœ¨å‰åç©ºæ ¼æˆ–\tä¸­çš„è‹±æ–‡å•è¯
 					if ((IsWordSplitChar(sc.ch) /*|| IsLineEol(sc.ch)*/) && isalpha(sc.chPrev))
 					{
 						char s[512];
@@ -294,7 +294,7 @@ void SCI_METHOD LexTXT::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 
 					if (IsWordSplitChar(sc.ch) && IsAWordStart(sc.chNext, false))
 					{
-						//ÕâÀïÇĞ»»µÄÊ±ºò£¬ForwardSetStateÌø¹ıµ±Ç°¿Õ°××Ö·û
+						//è¿™é‡Œåˆ‡æ¢çš„æ—¶å€™ï¼ŒForwardSetStateè·³è¿‡å½“å‰ç©ºç™½å­—ç¬¦
 						sc.ForwardSetState(SCE_TXT_ASCII);
 						continue;
 						//sc.SetState(SCE_TXT_ASCII);
@@ -306,7 +306,7 @@ void SCI_METHOD LexTXT::Lex(Sci_PositionU startPos, Sci_Position length, int ini
 		}
 	}
 	
-	//×îºóÒ»¶Î²»ÄÜÒÅÂ©£¬Ò²ĞèÒªÊ¶±ğ
+	//æœ€åä¸€æ®µä¸èƒ½é—æ¼ï¼Œä¹Ÿéœ€è¦è¯†åˆ«
 	sc.SetState(SCE_TXT_DEFAULT);
 
 	styler.IndicatorFill(startIndicator, sc.currentPos, indicatorWhitespace, 0);
@@ -333,7 +333,7 @@ static bool IsQuoteLine(Sci_Position line, const Accessor &styler) {
 }
 
 
-//²»´¦ÀíÈÎºÎÕÛµş
+//ä¸å¤„ç†ä»»ä½•æŠ˜å 
 void SCI_METHOD LexTXT::Fold(Sci_PositionU startPos, Sci_Position length, int /*initStyle - unused*/, IDocument *pAccess) {
 	return;
 }

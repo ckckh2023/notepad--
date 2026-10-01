@@ -3,7 +3,7 @@
 
 #define MyAppName "Notepad--"
 #define MyAppVersion "1.17.2"
-#define MyAppPublisher "ndd¿ªÔ´×éÖ¯"
+#define MyAppPublisher "nddå¼€æºç»„ç»‡"
 #define MyAppURL "https://gitee.com/cxasm/notepad--"
 #define MyAppExeName "Notepad--.exe"
 #define MyAppAssocName "nddfile"

@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file LexCOBOL.cxx
  ** Lexer for COBOL
  ** Based on LexPascal.cxx

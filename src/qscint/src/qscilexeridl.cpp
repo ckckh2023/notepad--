@@ -1,4 +1,4 @@
-﻿#include "Qsci/qscilexeridl.h"
+#include "Qsci/qscilexeridl.h"
 // This module implements the QsciLexerIDL class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>

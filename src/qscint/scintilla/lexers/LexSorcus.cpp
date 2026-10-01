@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file LexSorcus.cxx
 ** Lexer for SORCUS installation files
 ** Written by Eugen Bitter and Christoph Baumann at SORCUS Computer, Heidelberg Germany

@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file CharClassify.h
  ** Character classifications used by Document and RESearch.
  **/

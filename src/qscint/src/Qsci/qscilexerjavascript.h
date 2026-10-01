@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerJavaScript class.
+// This defines the interface to the QsciLexerJavaScript class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

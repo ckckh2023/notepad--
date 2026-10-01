@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Scintilla source code edit control
  * @file LexMySQL.cxx
  * Lexer for MySQL

@@ -1,4 +1,4 @@
-﻿#include "MediatorDisplay.h"
+#include "MediatorDisplay.h"
 
 
 //这里如果直接让左右互相同步，互相影响，可能导致混乱。需要一个中间调停者模式，作为中间人去控制同步消息

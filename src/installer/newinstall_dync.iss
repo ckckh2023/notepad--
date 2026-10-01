@@ -3,8 +3,8 @@
 
 #define MyAppName "Notepad--"
 #define MyAppVersion "1.23.2"
-#define MyAppDesc MyAppName + MyAppVersion + "(NddÖ÷³ÌĞò)"
-#define MyAppPublisher "ndd¿ªÔ´×éÖ¯"
+#define MyAppDesc MyAppName + MyAppVersion + "(Nddä¸»ç¨‹åº)"
+#define MyAppPublisher "nddå¼€æºç»„ç»‡"
 #define MyAppURL "https://gitee.com/cxasm/notepad--"
 #define MyAppExeName "Notepad--.exe"
 #define MyAppAssocName "nddfile"
@@ -91,7 +91,7 @@ Root: HKA; Subkey: "Software\Classes\*\shell\Notepad--\command"; ValueType: stri
 
 [Components]
 Name: "main"; Description: "{#MyAppDesc}"; Types: full compact custom; Flags: fixed
-Name: "ass"; Description: "¹ØÁª´ò¿ª³£¼ûÎÄ±¾ÀàĞÍ"; Types: full
+Name: "ass"; Description: "å…³è”æ‰“å¼€å¸¸è§æ–‡æœ¬ç±»å‹"; Types: full
 
 
 [Icons]

@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerMatlab class.
+// This defines the interface to the QsciLexerMatlab class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

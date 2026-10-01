@@ -1,4 +1,4 @@
-﻿// The implementation of the class that implements accessibility support.
+// The implementation of the class that implements accessibility support.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

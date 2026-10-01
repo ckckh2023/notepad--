@@ -1,4 +1,4 @@
-﻿// This class defines the "official" low-level API.
+// This class defines the "official" low-level API.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

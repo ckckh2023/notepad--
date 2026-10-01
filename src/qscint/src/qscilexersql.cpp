@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerSQL class.
+// This module implements the QsciLexerSQL class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

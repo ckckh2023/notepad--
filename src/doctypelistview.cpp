@@ -1,4 +1,4 @@
-﻿#include "doctypelistview.h"
+#include "doctypelistview.h"
 
 #include <QInputDialog>
 #include <QLineEdit>

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <QObject>
 #include <Qsci/qsciglobal.h>
 #include <Qsci/qscilexer.h>

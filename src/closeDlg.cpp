@@ -1,4 +1,4 @@
-﻿#include "closeDlg.h"
+#include "closeDlg.h"
 
 closeDlg::closeDlg(QWidget *parent): QDialog(parent)
 {

@@ -1,4 +1,4 @@
-﻿#include "findcmpwin.h"
+#include "findcmpwin.h"
 #include "qscidisplaywindow.h"
 #include <QRadioButton>
 #include <QMessageBox>

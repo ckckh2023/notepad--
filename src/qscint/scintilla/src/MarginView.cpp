@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file MarginView.cxx
  ** Defines the appearance of the editor margin.
  **/

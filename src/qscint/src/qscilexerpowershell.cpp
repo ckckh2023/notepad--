@@ -1,4 +1,4 @@
-﻿#include "Qsci/qscilexerpowershell.h"
+#include "Qsci/qscilexerpowershell.h"
 #include "Qsci/qsciscintillabase.h"
 
 #include <qcolor.h>

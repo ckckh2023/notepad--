@@ -1,4 +1,4 @@
-﻿#include "hexcmprangewin.h"
+#include "hexcmprangewin.h"
 
 #include <QLineEdit>
 #include <QMessageBox>

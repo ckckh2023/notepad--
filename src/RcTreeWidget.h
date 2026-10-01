@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <qtreewidget.h>
 #include <QPoint>
 #include <functional>

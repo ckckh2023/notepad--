@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 // Encoding: UTF-8
 /** @file LexMatlab.cxx
  ** Lexer for Matlab.

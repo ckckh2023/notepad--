@@ -1,4 +1,4 @@
-﻿#include "progresswin.h"
+#include "progresswin.h"
 #include <QCoreApplication>
 #include <QMessageBox>
 

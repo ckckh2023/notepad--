@@ -1,4 +1,4 @@
-﻿#include "rcglobal.h"
+#include "rcglobal.h"
 #include <QSettings>
 #include <QFileInfo>
 #include <QDir>

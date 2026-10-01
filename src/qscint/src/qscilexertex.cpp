@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerTeX class.
+// This module implements the QsciLexerTeX class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

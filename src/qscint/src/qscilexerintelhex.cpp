@@ -1,4 +1,4 @@
-﻿#include "Qsci/qscilexerintelhex.h"
+#include "Qsci/qscilexerintelhex.h"
 #include "Qsci/qsciscintillabase.h"
 
 #include <qcolor.h>

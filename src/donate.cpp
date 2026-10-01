@@ -1,4 +1,4 @@
-﻿#include "donate.h"
+#include "donate.h"
 
 Donate::Donate(QWidget *parent): QWidget(parent)
 {

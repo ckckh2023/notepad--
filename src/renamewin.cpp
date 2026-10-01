@@ -1,4 +1,4 @@
-﻿#include "renamewin.h"
+#include "renamewin.h"
 #include "progresswin.h"
 
 #include <QFileDialog>

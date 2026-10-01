@@ -1,4 +1,4 @@
-﻿#include "styleset.h"
+#include "styleset.h"
 #include "ccnotepad.h"
 #include <QFile>
 #include <QPalette>

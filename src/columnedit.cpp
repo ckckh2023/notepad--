@@ -1,4 +1,4 @@
-﻿#include "columnedit.h"
+#include "columnedit.h"
 #include "scintillaeditview.h"
 
 ColumnEdit::ColumnEdit(QWidget *parent)

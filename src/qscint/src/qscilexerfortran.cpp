@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerFortran class.
+// This module implements the QsciLexerFortran class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

@@ -1,4 +1,4 @@
-﻿#include "encodeconvert.h"
+#include "encodeconvert.h"
 #include "rcglobal.h"
 #include "CmpareMode.h"
 #include "doctypelistview.h"

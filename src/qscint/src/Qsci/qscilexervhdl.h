@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerVHDL class.
+// This defines the interface to the QsciLexerVHDL class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

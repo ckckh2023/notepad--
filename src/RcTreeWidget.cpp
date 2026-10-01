@@ -1,4 +1,4 @@
-﻿#include "RcTreeWidget.h"
+#include "RcTreeWidget.h"
 #include "MediatorFileTree.h"
 
 #include <QScrollBar>

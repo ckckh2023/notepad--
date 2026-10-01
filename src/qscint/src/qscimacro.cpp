@@ -303,7 +303,7 @@ void QsciMacro::record(unsigned int msg, unsigned long wParam, void *lParam)
     case QsciScintillaBase::SCI_SEARCHNEXT:
     case QsciScintillaBase::SCI_SEARCHPREV:
 
-    case MACRO_FIND_NEXT://²éÕÒÏÂÒ»¸ö¡£ĞèÒªflag ºÍ ²éÕÒÄÚÈİ
+    case MACRO_FIND_NEXT://æŸ¥æ‰¾ä¸‹ä¸€ä¸ªã€‚éœ€è¦flag å’Œ æŸ¥æ‰¾å†…å®¹
     case MACRO_REPLACE_ALL:
     case MACRO_REPLACE_ONE:
         m.text.append(reinterpret_cast<const char *>(lParam));

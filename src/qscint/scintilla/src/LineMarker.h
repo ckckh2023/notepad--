@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file LineMarker.h
  ** Defines the look of a line marker in the margin .
  **/

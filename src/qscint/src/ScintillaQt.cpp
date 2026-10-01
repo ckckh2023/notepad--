@@ -1,4 +1,4 @@
-﻿// The implementation of the Qt specific subclass of ScintillaBase.
+// The implementation of the Qt specific subclass of ScintillaBase.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

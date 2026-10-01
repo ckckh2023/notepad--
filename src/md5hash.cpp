@@ -38,9 +38,9 @@ void Md5hash::slot_select()
 	fd.setFileMode(QFileDialog::ExistingFile);
 	m_fileList.clear();
 
-	if (fd.exec() == QDialog::Accepted)   //Èç¹û³É¹¦µÄÖ´ÐÐ
+	if (fd.exec() == QDialog::Accepted)   //å¦‚æžœæˆåŠŸçš„æ‰§è¡Œ
 	{
-		m_fileList = fd.selectedFiles();      //·µ»ØÎÄ¼þÁÐ±íµÄÃû³Æ
+		m_fileList = fd.selectedFiles();      //è¿”å›žæ–‡ä»¶åˆ—è¡¨çš„åç§°
 
 		if (!m_fileList.isEmpty())
 		{
@@ -89,7 +89,7 @@ void Md5hash::on_hash()
 		method = QCryptographicHash::Keccak_256;
 	}
 
-	//Èç¹ûÊÇÎÄ±¾
+	//å¦‚æžœæ˜¯æ–‡æœ¬
 	if (!m_isFile)
 	{
 		QString text = ui.srcTextEdit->toPlainText();

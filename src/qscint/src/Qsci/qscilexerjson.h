@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerJSON class.
+// This defines the interface to the QsciLexerJSON class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

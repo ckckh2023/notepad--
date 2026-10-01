@@ -9,9 +9,9 @@ class FindRecords;
 struct FindRecord;
 
 struct ResultLineInfo {
-	int level;//Ëõ½øÀàÐÍ¡£0 1 2¡£0:title 1 filepath desc 2 result¡£
-	int resultPos;//½á¹û×Ö¶ÎµÄ¿ªÊ¼offset¡£0ºÍ1ÊÇÃ»ÓÐÕâ¸ö×Ö¶ÎµÄ¡£
-	int resultEnd;//³¤¶È
+	int level;//ç¼©è¿›ç±»åž‹ã€‚0 1 2ã€‚0:title 1 filepath desc 2 resultã€‚
+	int resultPos;//ç»“æžœå­—æ®µçš„å¼€å§‹offsetã€‚0å’Œ1æ˜¯æ²¡æœ‰è¿™ä¸ªå­—æ®µçš„ã€‚
+	int resultEnd;//é•¿åº¦
 	QString* pFilePath;
 };
 

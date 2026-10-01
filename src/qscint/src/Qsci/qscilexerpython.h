@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerPython class.
+// This defines the interface to the QsciLexerPython class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

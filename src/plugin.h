@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "pluginGl.h"
 #include <functional>
 class QMenu;

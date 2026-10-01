@@ -1,4 +1,4 @@
-﻿#include "userlexdef.h"
+#include "userlexdef.h"
 #include "rcglobal.h"
 #include <QSettings>
 

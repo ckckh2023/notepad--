@@ -1,4 +1,4 @@
-﻿// This defines the interface to the QsciLexerPOV class.
+// This defines the interface to the QsciLexerPOV class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

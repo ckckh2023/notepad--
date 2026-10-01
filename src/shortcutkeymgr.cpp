@@ -1,4 +1,4 @@
-﻿#include "shortcutkeymgr.h"
+#include "shortcutkeymgr.h"
 #include "shortcutkeyeditwin.h"
 #include "ccnotepad.h"
 

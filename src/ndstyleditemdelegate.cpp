@@ -21,7 +21,7 @@ void NdStyledItemDelegate::setFontSize(int size)
 	
 }
 
-//ÖØÔØÊ¹¿ÉÒÔÖ§³Ö¸»ÎÄ±¾¸ñÊ½µÄÎÄ×Ö
+//é‡è½½ä½¿å¯ä»¥æ”¯æŒå¯Œæ–‡æœ¬æ ¼å¼çš„æ–‡å­—
 void NdStyledItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
 	QStyleOptionViewItem viewOption(option);
@@ -29,13 +29,13 @@ void NdStyledItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem 
 	if (option.state.testFlag(QStyle::State_HasFocus))
 		viewOption.state = viewOption.state ^ QStyle::State_HasFocus;
 
-	// ... Ê¡ÂÔ
-	// ÉèÖÃÏÔÊ¾ÎÄ±¾Îª¿Õ£¬Ê¹ÓÃÄ¬ÈÏÑùÊ½
+	// ... çœç•¥
+	// è®¾ç½®æ˜¾ç¤ºæ–‡æœ¬ä¸ºç©ºï¼Œä½¿ç”¨é»˜è®¤æ ·å¼
 	QStyle *pStyle = viewOption.widget ? viewOption.widget->style() : QApplication::style();
 
 	QTextDocument doc;
 
-	//Íâ²¿ĞŞ¸ÄÁË×ÖÌå´óĞ¡ºó£¬ÄÚ²¿½øĞĞ¸»ÎÄ±¾µÄĞŞ¸Ä»æÖÆ¡£
+	//å¤–éƒ¨ä¿®æ”¹äº†å­—ä½“å¤§å°åï¼Œå†…éƒ¨è¿›è¡Œå¯Œæ–‡æœ¬çš„ä¿®æ”¹ç»˜åˆ¶ã€‚
 	if (m_defaultFontSize != 14)
 	{
 		viewOption.text.replace("font-size:14px",QString("font-size:%1px").arg(m_defaultFontSize));
@@ -51,9 +51,9 @@ void NdStyledItemDelegate::paint(QPainter * painter, const QStyleOptionViewItem 
 
 	QRect textRect = pStyle->subElementRect(QStyle::SE_ItemViewItemText, &viewOption);
 	painter->save();
-	// ×ø±ê±ä»»£¬½«×óÉÏ½ÇÉèÖÃÎªÔ­µã
+	// åæ ‡å˜æ¢ï¼Œå°†å·¦ä¸Šè§’è®¾ç½®ä¸ºåŸç‚¹
 	painter->translate(textRect.topLeft());
-	// ÉèÖÃHTML»æÖÆÇøÓò
+	// è®¾ç½®HTMLç»˜åˆ¶åŒºåŸŸ
 	painter->setClipRect(textRect.translated(-textRect.topLeft()));
 
 	doc.documentLayout()->draw(painter, paintContext);

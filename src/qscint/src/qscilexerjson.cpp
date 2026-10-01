@@ -1,4 +1,4 @@
-﻿// This module implements the QsciLexerJSON class.
+// This module implements the QsciLexerJSON class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

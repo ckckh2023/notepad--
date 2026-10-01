@@ -1,4 +1,4 @@
-﻿#include "Qsci/qscilexercsharp.h"
+#include "Qsci/qscilexercsharp.h"
 // This module implements the QsciLexerCSharp class.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>

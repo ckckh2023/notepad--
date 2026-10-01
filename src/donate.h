@@ -1,4 +1,4 @@
-﻿#ifndef DONATE_H
+#ifndef DONATE_H
 #define DONATE_H
 
 #include <QWidget>

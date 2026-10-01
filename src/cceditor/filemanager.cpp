@@ -1,4 +1,4 @@
-﻿#include "filemanager.h"
+#include "filemanager.h"
 #include "scintillaeditview.h"
 #include "scintillahexeditview.h"
 #include "CmpareMode.h"

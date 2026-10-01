@@ -1,4 +1,4 @@
-﻿#include "extlexermanager.h"
+#include "extlexermanager.h"
 
 //专门用来管理用户自定义的Ext 和 词法Lexer关联的类。
 //给出一个文件的ext后缀，快速告知该使用什么lexer进行语法高亮

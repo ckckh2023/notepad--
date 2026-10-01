@@ -1,4 +1,4 @@
-﻿#include "MediatorFileTree.h"
+#include "MediatorFileTree.h"
 
 /* 文件夹对比界面的中介者，使用中介者是为了让消息经过中介对象统一调度，避免左右互相依赖导致交互混乱
 */

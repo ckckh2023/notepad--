@@ -42,19 +42,19 @@ void BigFileMessage::slot_okBt()
 {
 	if (ui.textMode->isChecked())
 	{
-		m_result = TXT_TYPE;//ÆÕÍ¨ÎÄ±¾
+		m_result = TXT_TYPE;//æ™®é€šæ–‡æœ¬
 	}
 	else if(ui.bigTextMode->isChecked())
 	{
-		m_result = BIG_TEXT_RO_TYPE; //Ð¡ÓÚ8GµÄ´óÎÄ±¾
+		m_result = BIG_TEXT_RO_TYPE; //å°äºŽ8Gçš„å¤§æ–‡æœ¬
 	}
 	else if (ui.superBigTextMode->isChecked())
 	{
-		m_result = SUPER_BIG_TEXT_RO_TYPE;//8GÒÔÉÏµÄ´óÎÄ±¾
+		m_result = SUPER_BIG_TEXT_RO_TYPE;//8Gä»¥ä¸Šçš„å¤§æ–‡æœ¬
 	}
 	else if (ui.hexMode->isChecked())
 	{
-		m_result = HEX_TYPE;//¶þ½øÖÆ
+		m_result = HEX_TYPE;//äºŒè¿›åˆ¶
 	}
 	done(m_result);
 }

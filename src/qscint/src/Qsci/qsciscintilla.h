@@ -1,4 +1,4 @@
-﻿// This module defines the "official" high-level API of the Qt port of
+// This module defines the "official" high-level API of the Qt port of
 // Scintilla.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>

@@ -1,4 +1,4 @@
-﻿// The definition of the Qt specific subclass of ScintillaBase.
+// The definition of the Qt specific subclass of ScintillaBase.
 //
 // Copyright (c) 2023 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 

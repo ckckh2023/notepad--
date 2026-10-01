@@ -1,4 +1,4 @@
-﻿// Scintilla source code edit control
+// Scintilla source code edit control
 /** @file CellBuffer.h
  ** Manages the text of the document.
  **/
