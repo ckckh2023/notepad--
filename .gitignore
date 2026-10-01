@@ -475,3 +475,7 @@ compile_commands.json
 [Bb]uild/
 .vscode/
 .vs/
+
+# Agent WorkSpace
+/.codeartsdoer
+/.arts

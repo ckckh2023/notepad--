@@ -8,6 +8,8 @@
 #ifndef UNICONVERSION_H
 #define UNICONVERSION_H
 
+#include "Qsci/qsciglobal.h"
+
 namespace Scintilla {
 
 const int UTF8MaxBytes = 4;
@@ -48,7 +50,8 @@ inline constexpr bool UTF8IsAscii(int ch) noexcept {
 }
 
 enum { UTF8MaskWidth=0x7, UTF8MaskInvalid=0x8 };
-int UTF8Classify(const unsigned char *us, size_t len) noexcept;
+
+QSCINTILLA_EXPORT int UTF8Classify(const unsigned char *us, size_t len) noexcept;
 
 // Similar to UTF8Classify but returns a length of 1 for invalid bytes
 // instead of setting the invalid flag
